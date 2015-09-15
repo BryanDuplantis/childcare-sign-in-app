@@ -1,0 +1,20 @@
+{
+  "name": "childcare-sign-in-app",
+  "version": "1.0.0",
+  "homepage": "https://github.com/BryanDuplantis/childcare-sign-in-app",
+  "authors": [
+    "Bryan Duplantis <duplantis@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fullcalendar": "~2.4.0"
+  }
+}

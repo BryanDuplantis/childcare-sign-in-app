@@ -4,11 +4,28 @@
   <title><%= title %> | Childcare</title>
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/fullcalendar/dist/fullcalendar/fullcalendar.css">
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  <script src="/lib/moment/min/moment.min.js"></script>
+  <script src="/lib/fullcalendar/dist/fullcalendar.min.js"></script>
+
+  <script src=" $(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+    })
+
+});" </script>
+
 </head>
 <body>
-  <h1> Jazzercise Childcare </h1>
-  <h3> Sign-In </h3>
+  <h1> Jazzercise Childcare Sign In </h1>
+
+  <div id='calendar'></div>
 
   <script src="/js/angular.min.js"></script>
+
 </body>
 </html>

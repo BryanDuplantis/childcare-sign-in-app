@@ -3,6 +3,8 @@ var express = require('express');
 var app = express();
 app.set('view engine', 'ejs');
 
+require('./lib/mongod');
+
 app.get('/', function (req, res) {
   res.render('templates/childcare', {title: "Jazzercise"});
 });
