@@ -1,0 +1,24 @@
+{
+  "name": "childcare-sign-in-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryanDuplantis/childcare-sign-in-app.git"
+  },
+  "author": "Bryan Duplantis <duplantis@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BryanDuplantis/childcare-sign-in-app/issues"
+  },
+  "homepage": "https://github.com/BryanDuplantis/childcare-sign-in-app#readme",
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "mongodb": "^2.0.43"
+  }
+}
