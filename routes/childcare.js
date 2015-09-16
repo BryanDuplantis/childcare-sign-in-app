@@ -1,14 +1,19 @@
+//var ObjectID = require('mongodb').ObjectID;
 var express = require('express');
-var ObjectID = require('mongodb').ObjectID;
 var router = express.Router();
 
 // Saves users to database
 
-router.post('/new', function (req, res) {
-  var collection = global.db.collection('childcareUsers');
+router.post('/', function (req, res) {
+  var signIn = new SignIn({
+  date: req.body.date,
+  classTime: req.body.classTime,
+  childName: req.body.childName,
+  parentName: req.body.parentName
+})
 
   collection.save(req.body, function(){
-    res.redirect('/childcare');
+    res.redirect('/');
   });
 });
 
