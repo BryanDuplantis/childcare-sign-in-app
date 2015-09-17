@@ -1,10 +1,8 @@
 // grab the Mongoose model
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/childcare');
-var Schema = mongoose.Schema;
 
-// create a schema
-var userSchema = new Schema({
+var Customers = mongoose.model('customers', {
   date: Date,
   time: String,
   child1: String,
@@ -12,8 +10,5 @@ var userSchema = new Schema({
   parent: String
 });
 
-var User = mongoose.model('User', userSchema);
-
-// make this available to users in Node app
-module.exports = Childcare;
+module.exports = Customers;
 

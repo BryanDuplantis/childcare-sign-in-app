@@ -1,6 +1,6 @@
 module.controller('CalendarCtrl', function($scope) {
 
-  $scope.tagline = 'Where am I?';
+  $scope.tagline = 'The greatest pleasure in life is doing what people say you cannot do.';
 
   $(document).ready(function() {
 
