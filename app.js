@@ -8,10 +8,25 @@ require('./lib/mongod');
 app.use(express.static('www'));
 
 app.post('/childcare/data', function (req, res) {
-  // 1. Does some model logic
 
-  // 2. Returns data to front-end
-  res.send({title: 'Jazzercise'});
+  // Creates model
+  userSchema.create({
+    date : req.body.date,
+    time : req.body.time,
+    child1 : req.body.child1,
+    child2 : req.body.child2,
+    parent : req.body.parent,
+    done : false
+  }, function(err, userSchema) {
+      if (err)
+        res.send(err);
+    userSchema.find(function(err, childcare) {
+      if (err)
+        res.send(err)
+      // Returns data to front-end
+        res.send({title: 'Jazzercise'});
+    });
+  });
 });
 
 // errors

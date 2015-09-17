@@ -3,12 +3,7 @@
   <!-- HEADER -->
   <div class="jumbotron text-center">
     <h1>Jazzercise Child Care Sign In</h1>
-  </div>
-
-  <!-- LIST OF CHILDREN -->
-  <div id="children-list" class="row">
-    <div class="col-sm-4 col-sm-offset-4">
-    </div>
+    <p>{{ tagline }}</p>
   </div>
 
   <!-- FORM -->
@@ -25,7 +20,7 @@
 
       <div>
           <h3>Class Time</h3>
-          <input id="time" class="form-control input-lg text-center" type="time" value='{{ schedule.time }}' ng-model="schedule.time">
+          <input id="time" class="form-control input-lg text-center" type="time" value="schedule.time" ng-model="schedule.time">
           <span class="result"></span>
       </div>
 

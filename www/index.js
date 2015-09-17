@@ -10,5 +10,13 @@ module.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: "/views/childcare/childcare.html",
       controller: "ChildCareCtrl"
     })
+
+    // calendar
+    .state('calendar', {
+      url: "/calendar",
+      templateUrl: "/views/calendar/calendar.html",
+      controller: "CalendarCtrl"
+    });
 });
+
 
