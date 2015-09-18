@@ -1,15 +1,12 @@
-var childcare = require("../models/childcare");
+var Childcare = require("../models/childcare");
 var express = require('express');
 var router = express.Router();
+var mongo = require('mongodb');
 
-// Saves users to database
+// router.get('/:id', function(req, res) {
+//   var id = req.params.id;
 
-// router.post('/new', function (req, res) {
-//   var collection = global.db.collection('childcare');
-
-//   collection.save(req.body, function(){
-//     res.redirect('/');
-//   });
-// });
+//   res.sendFile('templates/table.html', {root: 'views'});
+// })
 
 module.exports = router;

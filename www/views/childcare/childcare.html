@@ -12,7 +12,7 @@
 
       <div>
           <h3>Today's Date</h3>
-          <input id="date" class="form-control input-lg text-center" type="date" value='{{ schedule.date }}' ng-model="schedule.date">
+          <input id="date" class="form-control input-lg text-center" type="date" ng-model="schedule.date">
           <span class="result"></span>
       </div>
 
@@ -20,13 +20,13 @@
 
       <div>
           <h3>Class Time</h3>
-          <input id="time" class="form-control input-lg text-center" type="time" value="schedule.time" ng-model="schedule.time">
+          <input id="time" class="form-control input-lg text-center" type="time" ng-model="schedule.time">
           <span class="result"></span>
       </div>
 
       <hr>
 
-      <form ng-submit="main.save()" novalidate>
+      <form ng-submit="form.submit()" novalidate>
         <div class="form-group">
           <input type="text" class="form-control input-lg text-center" name="child1" placeholder="Child's Name" ng-model="child1">
           <hr>
@@ -36,7 +36,7 @@
         </div>
 
         <!-- createSignIn() WILL CREATE NEW SIGN-INS -->
-        <button type="submit" class="btn btn-primary btn-lg" ng-click="childCare()">Add</button>
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="addPost()">Add</button>
       </form>
 
     </div>

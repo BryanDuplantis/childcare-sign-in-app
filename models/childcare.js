@@ -1,8 +1,8 @@
 // grab the Mongoose model
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/childcare');
+mongoose.connect('mongodb://localhost/jazzercise');
 
-var Customers = mongoose.model('customers', {
+var childcare = mongoose.model('childcare', {
   date: Date,
   time: String,
   child1: String,
@@ -10,5 +10,5 @@ var Customers = mongoose.model('customers', {
   parent: String
 });
 
-module.exports = Customers;
+module.exports = childcare;
 
