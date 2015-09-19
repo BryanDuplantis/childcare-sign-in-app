@@ -1,8 +1,17 @@
-module.controller('ChildCareCtrl', function($scope) {
+var module = angular.module('childCare');
 
-  // $scope.schedule.date = $filter('date')(Date.now(), 'yyyy-MM-dd');
-  // $scope.schedule.time = $filter('date')(Date.now(), 'HH:mm');
+module.controller('HomeCtrl', [ '$scope', '$http', function($scope, $http){
+  var vm = this;
+
+  vm.submit = function () {
+    $http
+      .post('/childcare', vm.schedule)
+      .success(function(data) {
+        console.log(data);
+        // add a thank you message
+      });
+  };
 
   $scope.tagline = 'Stay focused and never give up.';
 
-});
+}]);
