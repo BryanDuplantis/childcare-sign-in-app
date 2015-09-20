@@ -4,7 +4,7 @@ var app         = express();              // create app with Express
 var bodyParser  = require('body-parser'); // Pull information from HTML POST
 
 // require controllers
-var childcare = require('./controllers/childcare');
+var schedule = require('./controllers/childcare');
 var calendar  = require('./controllers/calendar');
 
 app.use(express.static('www')); // set the static files location
@@ -13,9 +13,9 @@ app.use(bodyParser.json()); // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 
 // routes
-app.post('/childcare', childcare.addSchedule);
+app.post('/schedules', schedule.addSchedule);
 // app.delete('/childcare/remove', childcare.deleteSchedule);
-// app.get('/childcare/calendar', calendar.getSchedules);
+app.get('/schedules', schedule.getSchedules);
 
 // errors
 app.use(function (req, res) {

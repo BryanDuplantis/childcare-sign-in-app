@@ -5,10 +5,10 @@ module.controller('HomeCtrl', [ '$scope', '$http', function($scope, $http){
 
   vm.submit = function () {
     $http
-      .post('/childcare', vm.schedule)
+      .post('/schedules', vm.schedule)
       .success(function(data) {
         console.log(data);
-        // add a thank you message
+        toastr.success('Successfully Checked In!');
       });
   };
 

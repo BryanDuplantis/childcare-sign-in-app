@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/jazzercise');
 
-var childcare = mongoose.model('Childcare', {
+var schedule = mongoose.model('Schedule', {
   date: Date,
   time: String,
   child1: String,
@@ -11,5 +11,5 @@ var childcare = mongoose.model('Childcare', {
   babysitter: String
 });
 
-module.exports = childcare;
+module.exports = schedule;
 

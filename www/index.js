@@ -7,7 +7,7 @@ module.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: "/",
-      templateUrl: "/views/childcare/childcare.html",
+      templateUrl: "/views/schedules/childcare.html",
       controller: "HomeCtrl",
       controllerAs: "vm"
     })
@@ -15,7 +15,7 @@ module.config(function ($stateProvider, $urlRouterProvider) {
     // calendar
     .state('calendar', {
       url: "/calendar",
-      templateUrl: "/views/calendar/calendar.html",
+      templateUrl: "/views/schedules/calendar.html",
       controller: "CalendarCtrl"
     });
 });
