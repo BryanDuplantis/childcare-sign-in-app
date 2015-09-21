@@ -15,9 +15,10 @@ module.controller('CalendarCtrl', function($scope) {
 
           // code here
 
+        $("#calendarModal").modal("show");
 
-          // change the day's background color just for fun
-          $(this).css('background-color', 'green');
+          //$(this).css('background-color', 'lightblue');
+
 
      }
     });
@@ -25,3 +26,4 @@ module.controller('CalendarCtrl', function($scope) {
   });
 
 });
+

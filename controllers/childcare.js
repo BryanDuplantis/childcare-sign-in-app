@@ -14,7 +14,7 @@ exports.addSchedule = function(req, res) {
 
     Schedule.find(function (err, users) {
       if (err) return console.error(err);
-      console.log(users);
+      //console.log(users);
       res.send(users);
     });
 
@@ -25,7 +25,7 @@ exports.addSchedule = function(req, res) {
 exports.getSchedules = function(req, res) {
   Schedule.find(function (err, users) {
     if (err) return console.error(err);
-    console.log(users);
+    //console.log(users);
     res.send(users);
   });
 };
@@ -37,6 +37,10 @@ exports.deleteSchedule = function(req, res) {
 exports.getSchedule = function(req, res) {
   // 1. Send req.body.date to mongoose using findOne
   // 2. Return that data using res.send
+  Schedule.findOne({date: req.body.date }, function (err, date) {
+  if (err) return handleError(err);
+  console.log(date);
+})
 };
 
 
