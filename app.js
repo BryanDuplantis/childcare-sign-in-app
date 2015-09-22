@@ -3,6 +3,8 @@ var express     = require('express');
 var app         = express();              // create app with Express
 var bodyParser  = require('body-parser'); // Pull information from HTML POST
 
+require('./lib/mongod');
+
 // require controllers
 var schedule = require('./controllers/childcare');
 var calendar  = require('./controllers/calendar');

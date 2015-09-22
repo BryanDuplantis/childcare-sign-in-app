@@ -1,6 +1,4 @@
-// grab the Mongoose model
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/jazzercise');
 
 var schedule = mongoose.model('Schedule', {
   date: String,
