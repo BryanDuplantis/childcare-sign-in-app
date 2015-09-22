@@ -16,6 +16,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.post('/schedules', schedule.addSchedule);
 // app.delete('/childcare/remove', childcare.deleteSchedule);
 app.get('/schedules', schedule.getSchedules);
+app.post('/schedule', schedule.getSchedule);
 
 // errors
 app.use(function (req, res) {

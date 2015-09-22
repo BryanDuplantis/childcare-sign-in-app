@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/jazzercise');
 
 var schedule = mongoose.model('Schedule', {
-  date: Date,
+  date: String,
   time: String,
   child1: String,
   child2: String,

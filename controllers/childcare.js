@@ -5,7 +5,10 @@ var Schedule = require("../models/schedule");
 // This will allow you to use require to import a file with multiple functions attached
 
 exports.addSchedule = function(req, res) {
-  var schedule = new Schedule(req.body);
+  console.log(typeof new Date(req.body.date));
+  var today = new Date(req.body.date).toDateString(); // Use date string
+  req.body.date = today; // re-assign to req.body
+  var schedule = new Schedule(req.body); // Create new Schedule
   //console.log(typeof req.body);
   //console.log(schedule);
 
@@ -17,9 +20,7 @@ exports.addSchedule = function(req, res) {
       //console.log(users);
       res.send(users);
     });
-
   })
-
 };
 
 exports.getSchedules = function(req, res) {
@@ -35,11 +36,11 @@ exports.deleteSchedule = function(req, res) {
 };
 
 exports.getSchedule = function(req, res) {
-  // 1. Send req.body.date to mongoose using findOne
-  // 2. Return that data using res.send
-  Schedule.findOne({date: req.body.date }, function (err, date) {
+  console.log(new Date(req.body.date).toDateString());
+  Schedule.find({date: new Date(req.body.date).toDateString()}, function (err, date) {
+    console.log(err, date);
   if (err) return handleError(err);
-  console.log(date);
+  res.send(date);
 })
 };
 

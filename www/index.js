@@ -8,8 +8,7 @@ module.config(function ($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: "/",
       templateUrl: "/views/schedules/childcare.html",
-      controller: "HomeCtrl",
-      controllerAs: "vm"
+      controller: "HomeCtrl"
     })
 
     // calendar
