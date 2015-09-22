@@ -35,7 +35,7 @@ module.controller('CalendarCtrl', function($scope, $http) {
       // 1. Loop through all events
       // 2. start = new Date(e.date)
       $('#calendar').fullCalendar('renderEvent', {
-        title: 'number of children',
+        title: '4',
         start: new Date()
       });
     };

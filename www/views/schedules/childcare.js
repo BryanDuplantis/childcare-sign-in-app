@@ -13,8 +13,6 @@ module.controller('HomeCtrl', [ '$scope', '$http', function($scope, $http){
       });
   };
 
-  $scope.tagline = 'Stay focused and never give up.';
+  //$scope.tagline = 'Stay focused and never give up.';
 
 }]);
-
-// angular.copy will copy an variable without two-way data binding it to the variable it's copying
