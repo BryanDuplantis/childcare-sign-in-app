@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
+    "angucomplete-alt": "~1.2.3",
     "angular-bootstrap": "~0.13.4",
     "angular-ui-calendar": "~1.0.1",
     "angular-ui-router": "ui-router#~0.2.15",

@@ -4,6 +4,8 @@
 
     <p> {{ tagline }} </p>
 
+    <a href="#/" class="btn btn-success btn-lg" role="button">Go To Sign In</a>
+
 </div>
 
 <div id="calendar"></div>
@@ -20,8 +22,10 @@
             <h4 id="modalTitle" class="modal-title"></h4>
         </div>
         <div id="modalBody" class="modal-body">
-          <div ng-repeat="event in today | orderBy: 'child'">
-            <h4> {{ event.child }} </h4>
+          <div ng-repeat="event in today">
+            <h4 class="modal_child"> {{ event.child }} </h4>
+            <p class="modal_schedule">Time: {{event.time}} || Babysitter: {{event.babysitter}}</p>
+            <hr>
           </div>
         </div>
         <div class="modal-footer">

@@ -39,17 +39,3 @@ module.controller('CalendarCtrl', function($scope, $http) {
       });
     };
 });
-
-// Angucomplete Alt
-
-// $http.get('/schedules')
-//         .success(function(data) {
-//             $scope.todos = data;
-//             renderCalendar();
-//             populateCalendar(data);
-//         })
-//         .error(function(data) {
-//             console.log('Error: ' + data);
-//         });
-
-// Copy to views/schedules/childcare.js

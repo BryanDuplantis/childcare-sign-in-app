@@ -1,0 +1,23 @@
+.jumbotron_checkin {
+    position: relative;
+    background: url('/images/jumbotron_blur.png');
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    overflow: hidden;
+    color: white;
+    padding-bottom: 250px;
+    border-radius: 20px;
+}
+
+.modal_child {
+  margin-bottom: 4px;
+  margin-top: 1px;
+}
+
+.modal_schedule {
+  margin-bottom: 1px;
+}

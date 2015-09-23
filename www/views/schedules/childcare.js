@@ -8,7 +8,6 @@ module.controller('HomeCtrl', [ '$scope', '$http', function($scope, $http){
   };
 
   $scope.submit = function () {
-    // console.log('datetime', $scope.schedule.date, $scope.schedule.time);
 
     $http
       .post('/schedules', $scope.schedule)
@@ -17,6 +16,6 @@ module.controller('HomeCtrl', [ '$scope', '$http', function($scope, $http){
       });
   };
 
-  //$scope.tagline = 'Stay focused and never give up.';
+  $scope.tagline = 'Stay focused and never give up.';
 
 }]);
