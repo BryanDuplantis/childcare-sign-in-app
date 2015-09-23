@@ -1,13 +1,17 @@
 var module = angular.module('childCare');
 
 module.controller('HomeCtrl', [ '$scope', '$http', function($scope, $http){
+  $scope.opened = false;
+
+  $scope.open = function($event) {
+    $scope.opened = true;
+  };
 
   $scope.submit = function () {
-    var time = moment($scope.schedule.time).format("h:mm a");
-    var schedule = angular.copy($scope.schedule);
-    schedule.time = time;
+    // console.log('datetime', $scope.schedule.date, $scope.schedule.time);
+
     $http
-      .post('/schedules', schedule)
+      .post('/schedules', $scope.schedule)
       .success(function(data) {
         toastr.success('Successfully Checked In!');
       });

@@ -1,4 +1,4 @@
-var module = angular.module('childCare', ['ui.router']);
+var module = angular.module('childCare', ['ui.router', 'ui.bootstrap']);
 
 module.config(function ($stateProvider, $urlRouterProvider) {
   // for any unmatched url, redirect to /

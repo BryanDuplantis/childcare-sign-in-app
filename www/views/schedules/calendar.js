@@ -11,22 +11,19 @@ module.controller('CalendarCtrl', function($scope, $http) {
             console.log('Error: ' + data);
         });
 
-
-
     var renderCalendar = function() {
       $('#calendar').fullCalendar({
         dayClick: function(date, jsEvent, view) {
           //alert('Clicked on: ' + date.add('days', '1'));
-
-          $http.post('/schedule', {date: date.add('days', '1')})
-            .success(function(data) {
-              $scope.today = data;
-
-              $("#calendarModal").modal("show");
-            })
-            .error(function(data) {
-              console.log('Error: ' + data);
+          // console.log(date.add('days', '1'))
+            $scope.dateToday = date.format('MM/DD/YYYY');
+            $scope.today = $scope.todos.filter(function (event) {
+              // moment object
+              return event.date === date.format('MM/DD/YYYY');
             });
+
+            $("#calendarModal").modal("show");
+            $scope.$apply();
          }
       });
     };
@@ -34,22 +31,25 @@ module.controller('CalendarCtrl', function($scope, $http) {
     var populateCalendar = function(events) {
       // 1. Loop through all events
       // 2. start = new Date(e.date)
-      $('#calendar').fullCalendar('renderEvent', {
-        title: '4',
-        start: new Date()
+      events.forEach(function(e) {
+        $('#calendar').fullCalendar('renderEvent', {
+          title: e.child,
+          start: new Date(e.date + ' ' + e.time)
+        });
       });
     };
-
-
 });
 
+// Angucomplete Alt
 
-/*
-FOR LOOP
-var events = [{date: new Date()}, {date: new Date()}]
+// $http.get('/schedules')
+//         .success(function(data) {
+//             $scope.todos = data;
+//             renderCalendar();
+//             populateCalendar(data);
+//         })
+//         .error(function(data) {
+//             console.log('Error: ' + data);
+//         });
 
-events.forEach(function(e){
-  var date = new Date(e.date);
-});
-*/
-
+// Copy to views/schedules/childcare.js

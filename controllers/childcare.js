@@ -1,10 +1,15 @@
 var Schedule = require("../models/schedule");
+var moment = require("moment");
 
 exports.addSchedule = function(req, res) {
   console.log(typeof new Date(req.body.date));
-  var today = new Date(req.body.date).toDateString(); // Use date string
+  var today = moment(req.body.date).format("MM/DD/YYYY"); // Use date string
+  var time = moment(req.body.time).format("h:mm a");
   req.body.date = today; // re-assign to req.body
+  req.body.time = time; // re-assign to req.body
   var schedule = new Schedule(req.body); // Create new Schedule
+
+  // not using ISO date because no comparisons being done
 
   schedule.save(function (err, schedule) {
     if (err) return console.error(err);
@@ -27,7 +32,7 @@ exports.getSchedules = function(req, res) {
 
 exports.getSchedule = function(req, res) {
   console.log(new Date(req.body.date).toDateString());
-  Schedule.find({date: new Date(req.body.date).toDateString()}, function (err, date) {
+  Schedule.find({date: moment(req.body.date).format("MM/DD/YYYY")}, function (err, date) {
     console.log(err, date);
   if (err) return handleError(err);
   res.send(date);
