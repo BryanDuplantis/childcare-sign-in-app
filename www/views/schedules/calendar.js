@@ -14,8 +14,6 @@ module.controller('CalendarCtrl', function($scope, $http) {
     var renderCalendar = function() {
       $('#calendar').fullCalendar({
         dayClick: function(date, jsEvent, view) {
-          //alert('Clicked on: ' + date.add('days', '1'));
-          // console.log(date.add('days', '1'))
             $scope.dateToday = date.format('MM/DD/YYYY');
             $scope.today = $scope.todos.filter(function (event) {
               // moment object
@@ -29,8 +27,6 @@ module.controller('CalendarCtrl', function($scope, $http) {
     };
 
     var populateCalendar = function(events) {
-      // 1. Loop through all events
-      // 2. start = new Date(e.date)
       events.forEach(function(e) {
         $('#calendar').fullCalendar('renderEvent', {
           title: e.child,
